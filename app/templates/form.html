@@ -11,31 +11,33 @@
     <title>Editar album</title>
 </head>
 <body>
-    <h1>Editar informacion del album</h1>
+    <h1 class="text-center display-3 m-5">Editar informacion del album</h1>
     <form class="container" action='{% url 'crear' %}' method="POST">
             {% csrf_token %}
-            <div class="row justify-content-center align-items-center g-2">
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" name="nombre" id="nombre" class="form-control" placeholder="" aria-describedby="helpId" value={{ disco.nombre | default:''}}>
+            <div class="row">
+                <div class="col-md-4 offset-md-4">
+                    <div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="" aria-describedby="helpId" value={{ disco.nombre | default:''}}>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="autor" class="form-label">Autor</label>
-                        <input type="text" name="autor" id="autor" class="form-control" placeholder="" aria-describedby="helpId" value={{ disco.autor | default:''}}>
+                    <div>
+                        <div class="mb-3">
+                            <label for="autor" class="form-label">Autor</label>
+                            <input type="text" name="autor" id="autor" class="form-control" placeholder="" aria-describedby="helpId" value={{ disco.autor | default:''}}>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="mb-3">
-                        <label for="estilo" class="form-label">Estilo</label>
-                        <input type="text" name="estilo" id="estilo" class="form-control" placeholder="" aria-describedby="helpId" value={{ disco.estilo | default:''}}>
-                </div>
+                    <div>
+                        <div class="mb-3">
+                            <label for="estilo" class="form-label">Estilo</label>
+                            <input type="text" name="estilo" id="estilo" class="form-control" placeholder="" aria-describedby="helpId" value={{ disco.estilo | default:''}}>
+                    </div>
 
-                </div>
-                <button type="submit" class="btn btn-success">Actualizar</button>
+                    </div>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
+                </div>    
             </div>
-        </form>  
+    </form>  
 </body>
 </html>
